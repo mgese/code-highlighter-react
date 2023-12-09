@@ -25,7 +25,7 @@ npm install react-code-highlighter
 
 ```tsx
 import React from 'react';
-import { CodeHighlighter, CodeHighlighterTheme } from 'react-code-highlighter';
+import { CodeHighlighter, CodeHighlighterTheme } from 'code-highlighter-react';
 
 const code = `const greeting = 'Hello, World!';`;
 
@@ -47,7 +47,7 @@ export default MyComponent;
 
 ```tsx
 import React from 'react';
-import { CodeHighlighter, CodeHighlighterTheme } from 'react-code-highlighter';
+import { CodeHighlighter, CodeHighlighterTheme } from 'code-highlighter-react';
 
 const code = `const greeting = 'Hello, World!';`;
 
@@ -74,12 +74,12 @@ export default MyComponent;
 
 ### Props
 
-| Prop                  | Type                                       | Description                                                        | Default Value             |
-|-----------------------|--------------------------------------------|--------------------------------------------------------------------|---------------------------|
-| `code`                | `string`                                   | The code that should be displayed.                                  | -                         |
-| `copyButtonText`      | `string`                                   | Text displayed after the copy button.                               | -                         |
-| `formatConfig`        | `Options`                                  | A config to format the code with "prettier".                        | Babel                     |
-| `highlightedLines`    | `HighlightedLines`                        | The lines of code that should be highlighted.                       | -                         |
-| `language`            | `CodeHighlighterLanguage`                  | The language of the displayed code.                                 | -                         |
-| `shouldShowLineNumbers`| `boolean`                                  | Whether the line numbers should be displayed.                      | `false`                   |
-| `theme`               | `CodeHighlighterTheme`                     | The theme of the code block. Decide between dark and light.         | `CodeHighlighterTheme.Dark` |
+| Prop                    | Type                      | Description                                                 | Default Value               |
+|-------------------------|---------------------------|-------------------------------------------------------------|-----------------------------|
+| `code`                  | `string`                  | The code that should be displayed.                          | -                           |
+| `copyButtonText`        | `string`                  | Text displayed after the copy button.                       | -                           |
+| `formatConfig`          | `Options`                 | A config to format the code with "prettier".                | Babel                       |
+| `highlightedLines`      | `HighlightedLines`        | The lines of code that should be highlighted.               | -                           |
+| `language`              | `CodeHighlighterLanguage` | The language of the displayed code.                         | -                           |
+| `shouldShowLineNumbers` | `boolean`                 | Whether the line numbers should be displayed.               | `false`                     |
+| `theme`                 | `CodeHighlighterTheme`    | The theme of the code block. Decide between dark and light. | `CodeHighlighterTheme.Dark` |
