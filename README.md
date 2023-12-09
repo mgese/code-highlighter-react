@@ -17,7 +17,7 @@ The core highlighting is based on the [react-syntax-highlighter](https://github.
 ## Installation
 
 ```bash
-npm install react-code-highlighter
+npm install code-highlighter-react
 ```
 
 ## Usage
