@@ -1,6 +1,6 @@
 {
   "name": "code-highlighter-react",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A code highlighter component for react",
   "main": "dist/index.js",
   "files": [
@@ -17,6 +17,11 @@
   },
   "author": "Michael Gesenhues",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mgese/code-highlighter-react.git"
+  },
+  "homepage": "https://github.com/mgese/code-highlighter-react",
   "devDependencies": {
     "typescript": "^5.1.6",
     "@types/react-syntax-highlighter": "^15.5.11"
