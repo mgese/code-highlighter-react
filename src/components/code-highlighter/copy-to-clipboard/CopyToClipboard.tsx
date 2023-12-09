@@ -1,41 +1,34 @@
-import React, { FC } from "react";
-import { CodeHighlighterTheme } from "../../../types/codeHighlighter";
+import React, { FC } from 'react';
+import { CodeHighlighterTheme } from '../../../types/codeHighlighter';
 import {
-  StyledCopyToClipboard,
-  StyledCopyToClipboardIcon,
-  StyledCopyToClipboardText,
-} from "./CopyToClipboard.styles";
+    StyledCopyToClipboard,
+    StyledCopyToClipboardIcon,
+    StyledCopyToClipboardText,
+} from './CopyToClipboard.styles';
 
 export type CopyToClipboardProps = {
-  copyButtonText?: string;
-  text: string;
-  theme: CodeHighlighterTheme;
+    copyButtonText?: string;
+    text: string;
+    theme: CodeHighlighterTheme;
 };
 
-const CopyToClipboard: FC<CopyToClipboardProps> = ({
-  copyButtonText,
-  text,
-  theme,
-}) => {
-  const handleClick = () => {
-    void navigator.clipboard.writeText(text);
-  };
+const CopyToClipboard: FC<CopyToClipboardProps> = ({ copyButtonText, text, theme }) => {
+    const handleClick = () => {
+        void navigator.clipboard.writeText(text);
+    };
 
-  return (
-    <StyledCopyToClipboard onClick={handleClick}>
-      <StyledCopyToClipboardIcon
-        className="fa-regular fa-clipboard"
-        codeTheme={theme}
-      />
-      {copyButtonText && (
-        <StyledCopyToClipboardText codeTheme={theme}>
-          {copyButtonText}
-        </StyledCopyToClipboardText>
-      )}
-    </StyledCopyToClipboard>
-  );
+    return (
+        <StyledCopyToClipboard onClick={handleClick}>
+            <StyledCopyToClipboardIcon className="fa-regular fa-clipboard" codeTheme={theme} />
+            {copyButtonText && (
+                <StyledCopyToClipboardText codeTheme={theme}>
+                    {copyButtonText}
+                </StyledCopyToClipboardText>
+            )}
+        </StyledCopyToClipboard>
+    );
 };
 
-CopyToClipboard.displayName = "CopyToClipboard";
+CopyToClipboard.displayName = 'CopyToClipboard';
 
 export default CopyToClipboard;
