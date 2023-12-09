@@ -24,7 +24,7 @@ const CopyToClipboard: FC<CopyToClipboardProps> = ({
   return (
     <StyledCopyToClipboard onClick={handleClick}>
       <StyledCopyToClipboardIcon
-        // class="fa-light fa-clipboard"
+        className="fa-regular fa-clipboard"
         codeTheme={theme}
       />
       {copyButtonText && (
