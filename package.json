@@ -1,6 +1,7 @@
 {
   "version": "0.1.0",
   "license": "MIT",
+  "description": "A code highlighter component for react",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "files": [
@@ -31,7 +32,19 @@
   },
   "name": "code-highlighter-react",
   "author": "Michael Gesenhues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mgese/code-highlighter-react.git"
+  },
+  "homepage": "https://github.com/mgese/code-highlighter-react",
   "module": "dist/code-highlighter-react.esm.js",
+  "keywords": [
+    "react",
+    "code",
+    "highlighter",
+    "code highlighter",
+    "typescript"
+  ],
   "size-limit": [
     {
       "path": "dist/code-highlighter-react.cjs.production.min.js",
