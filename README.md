@@ -1,4 +1,4 @@
-# React Code Highlighter Package
+# Code Highlighter React
 
 ## Overview
 
