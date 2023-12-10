@@ -16,7 +16,7 @@
     "build": "tsc"
   },
   "author": "Michael Gesenhues",
-  "license": "ISC",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/mgese/code-highlighter-react.git"
