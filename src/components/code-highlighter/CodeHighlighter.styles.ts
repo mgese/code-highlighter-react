@@ -7,7 +7,7 @@ type StyledCodeHighlighterProps = {
 
 export const StyledCodeHighlighter = styled.div<StyledCodeHighlighterProps>`
     margin: 4px 0;
-    background-color: ${({ codeTheme }) =>
+    background-color: ${({ codeTheme }: StyledCodeHighlighterProps) =>
         codeTheme === CodeHighlighterTheme.Dark ? '#282c34' : '#fafafa'};
     border-radius: 8px;
     padding-bottom: 6px;
@@ -35,7 +35,7 @@ export const StyledCodeHighlighter = styled.div<StyledCodeHighlighterProps>`
 
         &::-webkit-scrollbar-thumb {
 
-            background-color: rgba(${({ codeTheme }) =>
+            background-color: rgba(${({ codeTheme }: StyledCodeHighlighterProps) =>
                 codeTheme === CodeHighlighterTheme.Dark ? '229, 229, 229' : '153, 153, 153'},
             1);
             border-radius: 20px;
@@ -45,7 +45,7 @@ export const StyledCodeHighlighter = styled.div<StyledCodeHighlighterProps>`
         // only supported in Firefox:
 
         * {
-            scrollbar-color: rgba(${({ codeTheme }) =>
+            scrollbar-color: rgba(${({ codeTheme }: StyledCodeHighlighterProps) =>
                 codeTheme === CodeHighlighterTheme.Dark ? '229, 229, 229' : '153, 153, 153'},
             1);
         ) transparent;
@@ -63,7 +63,8 @@ export const StyledCodeHighlighterHeader = styled.div<StyledCodeHighlighterHeade
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid
-        ${({ codeTheme }) => (codeTheme === CodeHighlighterTheme.Dark ? '#e5e5e5' : '#999999')};
+        ${({ codeTheme }: StyledCodeHighlighterHeaderProps) =>
+            codeTheme === CodeHighlighterTheme.Dark ? '#e5e5e5' : '#999999'};
     padding: 4px 12px;
 `;
 
@@ -72,5 +73,6 @@ type StyledCodeHighlighterFileNameProps = {
 };
 
 export const StyledCodeHighlighterFileName = styled.span<StyledCodeHighlighterFileNameProps>`
-    color: ${({ codeTheme }) => (codeTheme === CodeHighlighterTheme.Dark ? '#e5e5e5' : '#999999')};
+    color: ${({ codeTheme }: StyledCodeHighlighterFileNameProps) =>
+        codeTheme === CodeHighlighterTheme.Dark ? '#e5e5e5' : '#999999'};
 `;
