@@ -7,7 +7,7 @@ export default {
     component: CodeHighlighter,
     args: {
         shouldShowLineNumbers: true,
-        language: 'jsx',
+        language: 'tsx',
     },
 } as Meta<typeof CodeHighlighter>;
 
@@ -18,57 +18,60 @@ export const General = Template.bind({});
 export const HighlightedLines = Template.bind({});
 
 General.args = {
-    code: `import React from 'react';
-import { ColorSchemeProvider } from '@chayns-components/core';
-import { ChaynsProvider, getSite } from 'chayns-api';
+    code: `import React, { useState } from 'react';
 
-const AppWrapper = () => {
-    const { color, colorMode } = getSite();
+const ExampleComponent = () => {
+  const [counter, setCounter] = useState(0);
 
-    return (
-        <ChaynsProvider>
-            <ColorSchemeProvider 
-                color={color} 
-                colorMode={colorMode}
-            >
-                <YourComponent/>
-            </ColorSchemeProvider>
-        </ChaynsProvider>
-    )
-}
+  const incrementCounter = () => {
+    setCounter(counter + 1);
+  };
 
-export default AppWrapper;`,
+  const decrementCounter = () => {
+    setCounter(counter - 1);
+  };
+
+  return (
+    <div>
+      <h1>Counter: {counter}</h1>
+      <button onClick={incrementCounter}>Increment</button>
+      <button onClick={decrementCounter}>Decrement</button>
+    </div>
+  );
+};
+
+export default ExampleComponent;`,
 };
 
 HighlightedLines.args = {
     highlightedLines: {
-        added: [15, 16, 17, 18, 19],
+        added: [18],
         removed: [14],
-        marked: [5],
+        marked: [3],
     },
-    code: `import React from 'react';
-import { ColorSchemeProvider } from '@chayns-components/core';
-import { ChaynsProvider, getSite } from 'chayns-api';
+    code: `import React, { useState } from 'react';
 
-const AppWrapper = () => {
-    const { color, colorMode } = getSite();
+const ExampleComponent = () => {
+  const [counter, setCounter] = useState(0);
 
-    return (
-        <ChaynsProvider>
-            <ColorSchemeProvider
-                color={color}
-                colorMode={colorMode}
-            >
-                <YourComponent/>
-                <CodeHighlighter 
-                    code={code} 
-                    language="jsx"
-                    theme={CodeHighlighterTheme.Dark}
-                />
-            </ColorSchemeProvider>
-        </ChaynsProvider>
-    )
-}
+  const incrementCounter = () => {
+    setCounter(counter + 1);
+  };
 
-export default AppWrapper;`,
+  const decrementCounter = () => {
+    setCounter(counter - 1);
+  };
+  
+  console.log("Counter: ", counter);
+
+  return (
+    <div>
+      <h1>Counter: {counter}</h1>
+      <button onClick={incrementCounter}>Increment</button>
+      <button onClick={decrementCounter}>Decrement</button>
+    </div>
+  );
+};
+
+export default ExampleComponent;`,
 };
