@@ -6,6 +6,7 @@ This is a React code highlighter package designed to make it easy to implement c
 The package is written in TypeScript and utilizes Styled Components for flexible and customizable styling.
 The core highlighting is based on the [react-syntax-highlighter](https://github.com/react-syntax-highlighter/react-syntax-highlighter "Visit react-syntax-highlighter on GitHub") package.
 
+[![CodeHighlighter](https://iili.io/J7zNOHg.md.png)](https://freeimage.host/i/J7zNOHg)
 
 ## Features
 
@@ -16,7 +17,7 @@ The core highlighting is based on the [react-syntax-highlighter](https://github.
   - TSX
   - TypeScript 
   - JavaScript 
-  - CSs
+  - CSS
   - HTML
   - Markdown 
   - Yaml
@@ -89,6 +90,6 @@ export default MyComponent;
 | `copyButtonText`        | `string`                  | Text displayed after the copy button.                       | -                           |
 | `highlightedLines`      | `HighlightedLines`        | The lines of code that should be highlighted.               | -                           |
 | `language`              | `CodeHighlighterLanguage` | The language of the displayed code.                         | -                           |
-| `shouldFormatCode`          | `boolean`                 | Whether the Code should be formatted.                | false                       | 
+| `shouldFormatCode`      | `boolean`                 | Whether the Code should be formatted.                       | `false`                     | 
 | `shouldShowLineNumbers` | `boolean`                 | Whether the line numbers should be displayed.               | `false`                     |
 | `theme`                 | `CodeHighlighterTheme`    | The theme of the code block. Decide between dark and light. | `CodeHighlighterTheme.Dark` |
