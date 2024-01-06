@@ -65,7 +65,7 @@ export const StyledCodeHighlighterHeader = styled.div<StyledCodeHighlighterHeade
     border-bottom: 1px solid
         ${({ codeTheme }: StyledCodeHighlighterHeaderProps) =>
             codeTheme === CodeHighlighterTheme.Dark ? '#e5e5e5' : '#999999'};
-    padding: 4px 12px;
+    padding: 8px 12px;
 `;
 
 type StyledCodeHighlighterFileNameProps = {
@@ -75,4 +75,6 @@ type StyledCodeHighlighterFileNameProps = {
 export const StyledCodeHighlighterFileName = styled.span<StyledCodeHighlighterFileNameProps>`
     color: ${({ codeTheme }: StyledCodeHighlighterFileNameProps) =>
         codeTheme === CodeHighlighterTheme.Dark ? '#e5e5e5' : '#999999'};
+    font-family: sans-serif;
+    font-size: small;
 `;
