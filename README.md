@@ -89,5 +89,6 @@ export default MyComponent;
 | `copyButtonText`        | `string`                  | Text displayed after the copy button.                       | -                           |
 | `highlightedLines`      | `HighlightedLines`        | The lines of code that should be highlighted.               | -                           |
 | `language`              | `CodeHighlighterLanguage` | The language of the displayed code.                         | -                           |
-| `shouldFormatCode`          | `boolean`                 | Whether the Code should be formatted.                | false                       | `shouldShowLineNumbers` | `boolean`                 | Whether the line numbers should be displayed.               | `false`                     |
+| `shouldFormatCode`          | `boolean`                 | Whether the Code should be formatted.                | false                       | 
+| `shouldShowLineNumbers` | `boolean`                 | Whether the line numbers should be displayed.               | `false`                     |
 | `theme`                 | `CodeHighlighterTheme`    | The theme of the code block. Decide between dark and light. | `CodeHighlighterTheme.Dark` |
