@@ -66,11 +66,15 @@ const CodeHighlighter: FC<CodeHighlighterProps> = ({
                 borderRadius: '2px',
             };
 
-            if (highlightedLines?.added && highlightedLines.added.includes(lineNumber)) {
+            if (!highlightedLines) {
+                return { style };
+            }
+
+            if (highlightedLines.added && highlightedLines.added.includes(lineNumber)) {
                 style = { ...style, backgroundColor: '#2EF29930' };
-            } else if (highlightedLines?.removed && highlightedLines.removed.includes(lineNumber)) {
+            } else if (highlightedLines.removed && highlightedLines.removed.includes(lineNumber)) {
                 style = { ...style, backgroundColor: '#F22E5B30' };
-            } else if (highlightedLines?.marked && highlightedLines.marked.includes(lineNumber)) {
+            } else if (highlightedLines.marked && highlightedLines.marked.includes(lineNumber)) {
                 style = { ...style, backgroundColor: '#cccccc40' };
             }
 
