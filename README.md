@@ -11,7 +11,16 @@ The core highlighting is based on the [react-syntax-highlighter](https://github.
 
 - **Switch themes**: Switch between a dark and a light theme.
 - **Highlight lines**: Highlight specific lines (added, removed, marked).
-- **Custom config for formatting**: Format the code with a custom Prettier config.
+- **Formatting specific languages**: Formats the following languages with prettier:
+  - JSX
+  - TSX
+  - TypeScript 
+  - JavaScript 
+  - CSs
+  - HTML
+  - Markdown 
+  - Yaml
+  - Graph QL
 - **Copy code**: Copy the code with a dedicated button.
 
 ## Installation
@@ -78,8 +87,7 @@ export default MyComponent;
 |-------------------------|---------------------------|-------------------------------------------------------------|-----------------------------|
 | `code`                  | `string`                  | The code that should be displayed.                          | -                           |
 | `copyButtonText`        | `string`                  | Text displayed after the copy button.                       | -                           |
-| `formatConfig`          | `Options`                 | A config to format the code with "prettier".                | Babel                       |
 | `highlightedLines`      | `HighlightedLines`        | The lines of code that should be highlighted.               | -                           |
 | `language`              | `CodeHighlighterLanguage` | The language of the displayed code.                         | -                           |
-| `shouldShowLineNumbers` | `boolean`                 | Whether the line numbers should be displayed.               | `false`                     |
+| `shouldFormatCode`          | `boolean`                 | Whether the Code should be formatted.                | false                       | `shouldShowLineNumbers` | `boolean`                 | Whether the line numbers should be displayed.               | `false`                     |
 | `theme`                 | `CodeHighlighterTheme`    | The theme of the code block. Decide between dark and light. | `CodeHighlighterTheme.Dark` |
