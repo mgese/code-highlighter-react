@@ -113,6 +113,7 @@ export type CodeHighlighterLanguage =
     | 'hoon'
     | 'hpkp'
     | 'hsts'
+    | 'html'
     | 'http'
     | 'ichigojam'
     | 'icon'
@@ -286,4 +287,5 @@ export type CodeHighlighterLanguage =
     | 'xquery'
     | 'yaml'
     | 'yang'
-    | 'zig';
+    | 'zig'
+    | undefined;

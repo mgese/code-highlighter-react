@@ -1,5 +1,3 @@
-import type { Options } from 'prettier';
-import parserBabel from 'prettier/parser-babel';
 import { format } from 'prettier/standalone';
 import React, { FC, useCallback, useMemo } from 'react';
 import { PrismAsyncLight as SyntaxHighlighter } from 'react-syntax-highlighter';
@@ -9,17 +7,13 @@ import {
     CodeHighlighterTheme,
     HighlightedLines,
 } from '../../types/codeHighlighter';
+import { formatLanguage, getParserForLanguage } from '../../utils/codeHighlighter';
 import {
     StyledCodeHighlighter,
     StyledCodeHighlighterFileName,
     StyledCodeHighlighterHeader,
 } from './CodeHighlighter.styles';
 import CopyToClipboard from './copy-to-clipboard/CopyToClipboard';
-
-const prettierOptions: Options = {
-    parser: 'babel',
-    plugins: [parserBabel],
-};
 
 export type CodeHighlighterProps = {
     /**
@@ -32,10 +26,6 @@ export type CodeHighlighterProps = {
      */
     copyButtonText?: string;
     /**
-     * A config to format the code with "prettier".
-     */
-    formatConfig?: Options;
-    /**
      * The lines of code that should be highlighted.
      * Following lines can be highlighted: added, removed and just marked.
      */
@@ -44,6 +34,10 @@ export type CodeHighlighterProps = {
      * The language of the displayed code.
      */
     language: CodeHighlighterLanguage;
+    /**
+     * Whether the code should be formatted with prettier.
+     */
+    shouldFormatCode?: boolean;
     /**
      * Whether the line numbers should be displayed.
      */
@@ -58,9 +52,9 @@ const CodeHighlighter: FC<CodeHighlighterProps> = ({
     theme = CodeHighlighterTheme.Dark,
     code,
     copyButtonText,
-    formatConfig = prettierOptions,
     language,
     highlightedLines,
+    shouldFormatCode = false,
     shouldShowLineNumbers = false,
 }) => {
     // function to style highlighted code
@@ -85,32 +79,44 @@ const CodeHighlighter: FC<CodeHighlighterProps> = ({
         [highlightedLines],
     );
 
+    const formattedCode = useMemo(() => {
+        if (language) {
+            const config = getParserForLanguage(language);
+
+            if (shouldFormatCode && config) {
+                return format(code, config) as unknown as string;
+            }
+
+            return code;
+        }
+
+        return code;
+    }, [code, language, shouldFormatCode]);
+
     return useMemo(
         () => (
             <StyledCodeHighlighter codeTheme={theme}>
                 <StyledCodeHighlighterHeader codeTheme={theme}>
                     <StyledCodeHighlighterFileName codeTheme={theme}>
-                        {language}
+                        {formatLanguage(language)}
                     </StyledCodeHighlighterFileName>
                     <CopyToClipboard text={code} theme={theme} copyButtonText={copyButtonText} />
                 </StyledCodeHighlighterHeader>
                 <SyntaxHighlighter
-                    language={language}
+                    language={language ?? ''}
                     showLineNumbers={shouldShowLineNumbers}
                     style={theme === CodeHighlighterTheme.Dark ? oneDark : oneLight}
                     wrapLines
                     lineProps={lineWrapper}
                 >
-                    {language === 'markdown'
-                        ? code
-                        : (format(code, formatConfig) as unknown as string)}
+                    {formattedCode}
                 </SyntaxHighlighter>
             </StyledCodeHighlighter>
         ),
-        [theme, language, code, copyButtonText, shouldShowLineNumbers, lineWrapper, formatConfig],
+        [theme, language, code, copyButtonText, shouldShowLineNumbers, lineWrapper, formattedCode],
     );
 };
 
-CodeHighlighter.displayName = "CodeHighlighter";
+CodeHighlighter.displayName = 'CodeHighlighter';
 
 export default CodeHighlighter;
