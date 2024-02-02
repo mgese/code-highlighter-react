@@ -6,6 +6,8 @@ This is a React code highlighter package designed to make it easy to implement c
 The package is written in TypeScript and utilizes Styled Components for flexible and customizable styling.
 The core highlighting is based on the [react-syntax-highlighter](https://github.com/react-syntax-highlighter/react-syntax-highlighter "Visit react-syntax-highlighter on GitHub") package.
 
+**[Storybook](https://code-highlighter-react.netlify.app "Storybook")**
+
 [![CodeHighlighter](https://iili.io/J7zNOHg.md.png)](https://freeimage.host/i/J7zNOHg)
 
 ## Features
